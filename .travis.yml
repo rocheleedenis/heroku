@@ -21,3 +21,6 @@ deploy:
   api-key:
     secure: $HEROKU_API_KEY
   app: heroku-with-laravel
+  run:
+    - cp .env.heroku .env
+    - php artisan migrate:refresh --seed
